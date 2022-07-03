@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="./logo.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <img src="./images/earphone.png" alt="" />
+      </div>
+      <div class="box2">
+        <p class="text">Click to listen</p>
+        <img id="icon" src="./images/play.png" class="play" alt="" />
+      </div>
+    </div>
+    <audio id="mySong">
+      <source src="./music.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      var mySong = document.getElementById("mySong");
+      var icon = document.getElementById("icon");
+      icon.onclick = function () {
+        if (mySong.paused) {
+          mySong.play();
+          icon.src = "./images/pause.png";
+        } else {
+          mySong.pause();
+          icon.src = "./images/play.png";
+        }
+      };
+    </script>
+  </body>
+</html>
